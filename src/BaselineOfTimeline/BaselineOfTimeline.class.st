@@ -10,12 +10,7 @@ BaselineOfTimeline >> baseline: spec [
 
   <baseline>
   spec for: #common do: [
-      spec baseline: 'Chalten' with: [
-          spec
-            repository: 'github://ba-st/chalten:v9/source';
-            loads: #( 'Chalten-Gregorian-Calendar' )
-        ].
-
+      self setUpDependencies: spec.
       spec
         package: 'Timeline-Model' with: [ spec requires: #( 'Chalten' ) ];
         package: 'Timeline-Tests' with: [ spec requires: #( 'Timeline-Model' ) ].
@@ -25,4 +20,16 @@ BaselineOfTimeline >> baseline: spec [
         group: 'core' with: #( 'Timeline-Model' );
         group: 'tests' with: #( 'Timeline-Tests' )
     ]
+]
+
+{ #category : 'baselines' }
+BaselineOfTimeline >> setUpDependencies: spec [
+
+  spec spec
+    baseline: 'Chalten' with: [
+        spec
+          repository: 'github://ba-st/Chalten:v10/source';
+          loads: #( 'Chalten-Gregorian-Calendar' )
+      ];
+    import: 'Chalten'
 ]
