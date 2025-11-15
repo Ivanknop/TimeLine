@@ -25,11 +25,9 @@ BaselineOfTimeline >> baseline: spec [
 { #category : 'baselines' }
 BaselineOfTimeline >> setUpDependencies: spec [
 
-  spec
-    baseline: 'Chalten' with: [
-        spec
-          repository: 'github://ba-st/Chalten:v10.0.0/source';
-          loads: #( 'Chalten-Gregorian-Calendar' )
-      ];
-    import: 'Chalten'
+  spec baseline: 'Chalten' with: [
+      spec
+        repository: 'github://ba-st/Chalten:v10.0.0/source';
+        loads: #( 'Chalten-Gregorian-Calendar' )
+    ]
 ]
