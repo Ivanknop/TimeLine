@@ -28,12 +28,10 @@ BaselineOfTimeline >> baseline: spec [
 BaselineOfTimeline >> setUpDependencies: spec [
 
   spec
-    baseline: 'Chalten' with: [
-        spec
-          repository: 'github://ba-st/Chalten:v10.0.0/source';
-          loads: #( 'Chalten-Gregorian-Calendar' )
-      ];
-    import: 'Chalten'.
+    baseline: 'Chalten' with: [ spec repository: 'github://ba-st/Chalten:v10' ];
+    project: 'Chalten-Deployment-Gregorian'
+    copyFrom: 'Chalten'
+    with: [ spec loads: 'Deployment-Gregorian' ].
   spec
     baseline: 'Seaside3' with: [
         spec
